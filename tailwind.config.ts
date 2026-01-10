@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +60,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        iot: {
+          navy: "hsl(var(--iot-navy))",
+          charcoal: "hsl(var(--iot-charcoal))",
+          teal: "hsl(var(--iot-teal))",
+          green: "hsl(var(--iot-green))",
+          cyan: "hsl(var(--iot-cyan))",
+          slate: "hsl(var(--iot-slate))",
+        },
+        status: {
+          online: "hsl(var(--status-online))",
+          warning: "hsl(var(--status-warning))",
+          critical: "hsl(var(--status-critical))",
+          offline: "hsl(var(--status-offline))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,25 +82,32 @@ export default {
       },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--iot-teal) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--iot-teal) / 0.6)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "shimmer": "shimmer 2s linear infinite",
+        "glow": "glow 2s ease-in-out infinite",
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "hero-gradient": "var(--gradient-hero)",
+        "accent-gradient": "var(--gradient-accent)",
       },
     },
   },
